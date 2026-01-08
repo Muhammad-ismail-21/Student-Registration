@@ -28,7 +28,7 @@ const StudentDashboard = () => {
 
         // Fetch student profile
         const studentRes = await axios.get(
-          "api/auth/student",
+          "/api/auth/student",
           config
         );
         setStudent(studentRes.data);
@@ -36,7 +36,7 @@ const StudentDashboard = () => {
 
         // Fetch all available courses
         const coursesRes = await axios.get(
-          "api/courses",
+          "/api/courses",
           config
         );
         setAvailableCourses(coursesRes.data);
@@ -60,13 +60,13 @@ const StudentDashboard = () => {
         },
       };
       await axios.post(
-        `api/courses/${courseId}/enroll`,
+        `/api/courses/${courseId}/enroll`,
         {},
         config
       );
       // Update enrolled courses
       const updatedStudentRes = await axios.get(
-        "api/auth/student",
+        "/api/auth/student",
         config
       );
       setEnrolledCourses(updatedStudentRes.data.enrolledCourses);
@@ -86,13 +86,13 @@ const StudentDashboard = () => {
         },
       };
       await axios.post(
-        `api/courses/${courseId}/de-enroll`,
+        `/api/courses/${courseId}/de-enroll`,
         {},
         config
       );
       // Update enrolled courses
       const updatedStudentRes = await axios.get(
-        "api/auth/student",
+        "/api/auth/student",
         config
       );
       setEnrolledCourses(updatedStudentRes.data.enrolledCourses);

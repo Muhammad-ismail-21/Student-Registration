@@ -19,7 +19,7 @@ const TeacherLogin = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "api/auth/login/teacher",
+        "/api/auth/login/teacher",
         formData
       );
       localStorage.setItem("token", res.data.token);

@@ -26,7 +26,7 @@ const TeacherRegister = () => {
     try {
       const newUser = { name, email, password };
       const res = await axios.post(
-        "api/auth/register/teacher",
+        "/api/auth/register/teacher",
         newUser
       );
       localStorage.setItem("token", res.data.token);
