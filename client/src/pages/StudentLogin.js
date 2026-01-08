@@ -19,7 +19,7 @@ const StudentLogin = () => {
     e.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/login/student",
+        "api/auth/login/student",
         formData
       );
       localStorage.setItem("token", res.data.token);

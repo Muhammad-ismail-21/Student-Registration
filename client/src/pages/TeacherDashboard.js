@@ -35,7 +35,7 @@ const TeacherDashboard = () => {
 
         // These endpoints need to be created on the backend
         const teacherRes = await axios.get(
-          "http://localhost:5000/api/auth/teacher",
+          "api/auth/teacher",
           config
         );
         setTeacher(teacherRes.data.teacher);
@@ -65,7 +65,7 @@ const TeacherDashboard = () => {
         const token = localStorage.getItem("token");
         const config = { headers: { "x-auth-token": token } };
         const res = await axios.put(
-          `http://localhost:5000/api/courses/${editingCourse._id}`,
+          `api/courses/${editingCourse._id}`,
           formData,
           config
         );
@@ -89,7 +89,7 @@ const TeacherDashboard = () => {
         const token = localStorage.getItem("token");
         const config = { headers: { "x-auth-token": token } };
         const res = await axios.post(
-          "http://localhost:5000/api/courses",
+          "api/courses",
           formData,
           config
         );
@@ -128,7 +128,7 @@ const TeacherDashboard = () => {
       const token = localStorage.getItem("token");
       const config = { headers: { "x-auth-token": token } };
       await axios.delete(
-        `http://localhost:5000/api/courses/${courseId}`,
+        `api/courses/${courseId}`,
         config
       );
       setCourses(courses.filter((c) => c._id !== courseId));
